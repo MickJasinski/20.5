@@ -4,7 +4,7 @@ import { Router, hashHistory } from 'react-router';
 import { Provider } from "react-redux";
 import store from "./store";
 import routes from './routes';
-import { getCountries } from './actions/actions';
+// import { getCountries } from './actions/actions';
 import DevTools from "./store/DevTools";
 
 render(
@@ -14,7 +14,7 @@ render(
 			<DevTools />
 		</div>
   </Provider>,
-    document.getElementById('root')
+  document.getElementById('root')
 );
 
-store.dispatch(getCountries());
+// store.dispatch(getCountries());
