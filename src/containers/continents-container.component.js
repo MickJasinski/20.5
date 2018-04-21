@@ -4,10 +4,10 @@ import { setContinent, deleteCountry } from '../actions/actions';
 import CountryFlagList from '../presentational/flag-list.component';
 
 class ContinentsContainer extends Component {
-  // eslint-disable-next-line 
-  constructor(props) {
-    super(props);
-  }
+
+  // constructor(props) {
+  //   super(props);
+  // }
 
   chooseContinent(event) {
     this.props.dispatch(setContinent(event.target.value))
@@ -18,13 +18,13 @@ class ContinentsContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(setContinent('Europa'));
+    this.props.dispatch(setContinent(''));
   }
 
   render() {
     return (
       <div>
-        <select onChange={e => this.value === "Choose One" ? this.console.log('Choose a value') : this.chooseContinent(e)}>
+        <select onChange={e => this.value === "Choose One" ? this.componentDidMount() : this.chooseContinent(e)}>
           <option value="Choose One">Choose one</option>
           <option value="Europa">Europa</option>
           <option value="Afryka">Afryka</option>

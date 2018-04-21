@@ -1,4 +1,10 @@
-import { GET_COUNTRIES,GET_COUNTRY,SEARCH_COUNTRIES,DELETE_COUNTRY,SET_CONTINENT } from "../actions/actions";
+import {
+	GET_COUNTRIES,
+	GET_COUNTRY,
+	SEARCH_COUNTRIES,
+	DELETE_COUNTRY,
+	SET_CONTINENT
+} from "../actions/actions";
 import countriesData from "../data/countries.json";
 
 // app's initial state
@@ -12,12 +18,14 @@ const initialState = {
 const countriesReducer = function(state = initialState, action) {
 	switch (action.type) {
 		case GET_COUNTRIES:
-			return Object.assign({}, state, { countries: state.countries });
+			const allCountries = state.countries
+			return Object.assign({}, state, { visibleCountries: allCountries });
 
 		case GET_COUNTRY:
 			const selectedCountry = state.countries.find(
-				country => country.id === action.id
+				country => country.id === parseInt(action.id, 10)
 			);
+
 			return Object.assign({}, state, { selectedCountry });
 
 		case SEARCH_COUNTRIES:

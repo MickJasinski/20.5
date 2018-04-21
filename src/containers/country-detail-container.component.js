@@ -4,10 +4,10 @@ import { getCountry } from "../actions/actions";
 import CountryDetails from "../presentational/country-details.component";
 
 class CountryDetailsContainer extends Component {
-	// eslint-disable-next-line 
-	constructor(props) {
-		super(props);
-	}
+
+	// constructor(props) {
+	// 	super(props);
+	// }
 
 	componentDidMount() {
 		this.props.dispatch(getCountry(this.props.params.id));

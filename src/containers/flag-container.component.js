@@ -8,10 +8,10 @@ import {
 } from "../actions/actions";
 
 class CountryFlagContainer extends Component {
-  // eslint-disable-next-line 
-  constructor(props) {
-    super(props);
-  }
+
+  // constructor(props) {
+  //   super(props);
+  // }
 
   componentDidMount() {
     this.props.dispatch(getCountries());
